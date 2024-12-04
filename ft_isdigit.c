@@ -6,11 +6,9 @@
 /*   By: conradv2 <conradv2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 21:30:24 by conradv2          #+#    #+#             */
-/*   Updated: 2024/12/02 21:39:27 by conradv2         ###   ########.fr       */
+/*   Updated: 2024/12/04 18:02:06 by conradv2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
 
 int	ft_isdigit(int c)
 {
@@ -18,14 +16,5 @@ int	ft_isdigit(int c)
 	{
 		return (c);
 	}
-	return (0);
-}
-
-int	main(void)
-{
-	char	c;
-
-	c = 'i';
-	printf("Character: %c is %d\n" , c, ft_isdigit(c));
 	return (0);
 }
