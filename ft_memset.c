@@ -6,7 +6,7 @@
 /*   By: conradv2 <conradv2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 20:34:32 by conradv2          #+#    #+#             */
-/*   Updated: 2024/12/05 23:08:17 by conradv2         ###   ########.fr       */
+/*   Updated: 2024/12/06 00:36:55 by conradv2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int main()
 	printf("\n");
 	int my_arr[] = {1,2,3,4,5,6,7,8,9,10};
 
-	ft_memset(&my_arr[5], 0, 5*sizeof(arr[0]));
+	ft_memset(&my_arr[5], 0, 5*sizeof(arr[4]));
 	printf("\nMy array after ft_memset()\n");
 	printArray(my_arr, 10);
 	printf("\n");
@@ -61,9 +61,10 @@ int main()
 	char_printArray(string_array, 3);
 	printf("\n");
 	//ft_memset(string_array, 'Z', 3*sizeof(string_array[0]));
-	ft_memset(string_array, 'Z', 3*sizeof(string_array[0]));
+	ft_memset(&string_array[1], 'Z', 2);
 	char_printArray(string_array, 3);
 	// int c = 0x0002;
 	// printf("\n%d\n", c);
-    return 0;
+    printf("\n");
+	return 0;
 }
