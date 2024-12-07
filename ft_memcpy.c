@@ -6,7 +6,7 @@
 /*   By: kkruszyn <kkruszyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 12:12:14 by kkruszyn          #+#    #+#             */
-/*   Updated: 2024/12/07 12:19:09 by kkruszyn         ###   ########.fr       */
+/*   Updated: 2024/12/07 13:26:06 by kkruszyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,7 @@ void	*ft_memcpy(void*destination, const void*source, size_t num)
 	_source = (unsigned char *)source;
 	while (num != 0)
 	{
-		*_dest = *_source;
-		_dest++;
-		_source++;
+		*_dest++ = *_source++;
 		num--;
 	}
 	return (destination);
