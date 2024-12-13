@@ -6,7 +6,7 @@
 /*   By: kkruszyn <kkruszyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 14:27:45 by kkruszyn          #+#    #+#             */
-/*   Updated: 2024/12/13 16:06:55 by kkruszyn         ###   ########.fr       */
+/*   Updated: 2024/12/13 19:17:39 by kkruszyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
-	int		len;
+	size_t	len;
 	size_t	i;
 
 	len = ft_strlen(src);
@@ -28,7 +28,5 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 		}
 		*dest = '\0';
 	}
-	else
-		dest[0] = '\0';
 	return (len);
 }
