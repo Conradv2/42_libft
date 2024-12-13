@@ -3,35 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: conradv2 <conradv2@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kkruszyn <kkruszyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 12:12:14 by kkruszyn          #+#    #+#             */
-/*   Updated: 2024/12/09 02:29:22 by conradv2         ###   ########.fr       */
+/*   Updated: 2024/12/13 16:07:45 by kkruszyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void*destination, const void*source, size_t num)
-{
-	unsigned char	*_dest;
-	unsigned char	*_source;
-
-	_dest = (unsigned char *)destination;
-	_source = (unsigned char *)source;
-	while (num != 0)
-	{
-		*_dest++ = *_source++;
-		num--;
-	}
-	return (destination);
-}
-
 void	*ft_memmove(void*destination, const void*source, size_t num)
 {
 	unsigned char	*_dest;
 	unsigned char	*_source;
-	size_t			i;
 
 	_dest = (unsigned char *)destination;
 	_source = (unsigned char *)source;
