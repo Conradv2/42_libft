@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: conradv2 <conradv2@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kkruszyn <kkruszyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 17:19:27 by kkruszyn          #+#    #+#             */
-/*   Updated: 2024/12/09 02:29:33 by conradv2         ###   ########.fr       */
+/*   Updated: 2024/12/13 19:07:11 by kkruszyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,14 @@
 
 char	*ft_strchr(const char *str, int search_str)
 {
-	char	*found;
 	int		i;
 
 	i = 0;
 	while (str[i] != '\0')
 	{
-		if (str[i] == search_str)
+		if (str[i] == ((unsigned char)search_str))
 		{
-			found = (char *)&str[i];
-			return (found);
+			return ((char *)&str[i]);
 		}
 		i++;
 	}
@@ -33,3 +31,4 @@ char	*ft_strchr(const char *str, int search_str)
 	}
 	return (NULL);
 }
+
