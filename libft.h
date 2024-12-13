@@ -6,7 +6,7 @@
 /*   By: kkruszyn <kkruszyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 02:02:36 by conradv2          #+#    #+#             */
-/*   Updated: 2024/12/13 14:21:11 by kkruszyn         ###   ########.fr       */
+/*   Updated: 2024/12/13 15:34:32 by kkruszyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void			*ft_memset(void*str, int c, size_t n);
 char			*ft_strchr(const char *str, int search_str);
 size_t			ft_strlcat(char *dest, const char *src, size_t size);
 size_t			ft_strlcpy(char *dest, const char *src, size_t size);
-unsigned int	ft_strlen(char*str);
+size_t          ft_strlen(const char*str);
 int         	ft_strncmp(const char*str1, const char*str2, size_t n);
 char	        *strnstr(const char *big, const char *little, size_t len);
 char			*ft_strrchr(const char *str, int search_str);
