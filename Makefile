@@ -3,7 +3,8 @@ CC = gcc
 CFLAGS = -Wall -Wextra -Werror -std=c99 -g
 
 # Source files
-SRCS = ft_bzero.c \
+SRCS = ft_atoi.c \
+       ft_bzero.c \
        ft_isalnum.c \
        ft_isalpha.c \
        ft_isascii.c \
