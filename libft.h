@@ -6,10 +6,12 @@
 /*   By: kkruszyn <kkruszyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 02:02:36 by conradv2          #+#    #+#             */
-/*   Updated: 2024/12/13 14:16:53 by kkruszyn         ###   ########.fr       */
+/*   Updated: 2024/12/13 14:21:11 by kkruszyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef LIBFT_H
+#define LIBFT_H
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdio.h>
@@ -35,3 +37,4 @@ char	        *strnstr(const char *big, const char *little, size_t len);
 char			*ft_strrchr(const char *str, int search_str);
 int				ft_tolower(int c);
 int				ft_toupper(int c);
+#endif
