@@ -3,35 +3,36 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: conradv2 <conradv2@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kkruszyn <kkruszyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 02:27:15 by conradv2          #+#    #+#             */
-/*   Updated: 2024/12/12 04:13:33 by conradv2         ###   ########.fr       */
+/*   Updated: 2024/12/13 15:53:20 by kkruszyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-//Let's start with strstr implementation
-
 #include "libft.h"
-#include <string.h>
-#include <stdio.h>
 
-char	*strnstr(const char *big, const char *little, size_t len)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	unsigned char	*_big = (unsigned char *)big;
-	unsigned char	*_little = (unsigned char *)little;
+	size_t	i;
+	size_t	j;
 
-	
-}
-
-int	main(void)
-{
-	char t1[] = "Czesc siemaneczko wam wszystkim na moim kanale\n";
-	char t2[] = "siemaneczko";
-	char *p;
-
-	p = strnstr(t1, t2, sizeof(t1));
-	printf("%s\n", p);
-	return (0);
+	i = 0;
+	j = 0;
+	if (*little == '\0')
+		return ((char *)big);
+	while (big[i] != '\0' && i <= len)
+	{
+		while (little[j] != '\0' && (i + j) <= len)
+		{
+			if (big[i + j] != little[j])
+				break ;
+			j++;
+		}
+		if (little[j] == '\0')
+			return ((char *)&big[i]);
+		i++;
+		j = 0;
+	}
+	return (NULL);
 }
