@@ -6,7 +6,7 @@
 /*   By: conradv2 <conradv2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/14 21:35:42 by conradv2          #+#    #+#             */
-/*   Updated: 2024/12/14 21:53:16 by conradv2         ###   ########.fr       */
+/*   Updated: 2024/12/14 22:04:40 by conradv2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 void	*ft_calloc(size_t nitems, size_t size)
 {
-	char	*str;
-	size_t	i;
+	unsigned char	*str;
+	size_t			i;
 
-	str = (char *)malloc(nitems * size);
+	str = (unsigned char *)malloc(nitems * size);
 	i = 0;
 	while (i < nitems)
 	{
