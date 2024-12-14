@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kkruszyn <kkruszyn@student.42.fr>          +#+  +:+       +#+        */
+/*   By: conradv2 <conradv2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 16:25:38 by kkruszyn          #+#    #+#             */
-/*   Updated: 2024/12/13 18:17:43 by kkruszyn         ###   ########.fr       */
+/*   Updated: 2024/12/14 21:22:33 by conradv2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,27 +16,23 @@ int	ft_atoi(const char *string)
 {
 	int		res;
 	int		i;
-	char	*s;
 	int		minus;
 
-	s = (char *)string;
 	res = 0;
 	i = 0;
-	minus = 0;
-	while (s[i] != '\0')
+	minus = 1;
+	while (string[i] >= 9 && string[i] <= 13)
+		i++;
+	if (string[i] == '-' || string[i] == '+')
 	{
-		if (s[i] == '-')
-			minus++;
+		if (string[i] == '-')
+			minus = -1;
 		i++;
 	}
-	i = 0;
-	while (s[i] != '\0')
+	while (string[i] >= '0' && string[i] <= '9')
 	{
-		if (s[i] >= '0' && s[i] <= '9')
-			res = res * 10 + s[i] - '0';
+		res = res * 10 + string[i] - '0';
 		i++;
 	}
-	if (!(minus % 2 == 0))
-		return (res * (-1));
-	return (res);
+	return (res * minus);
 }
