@@ -5,7 +5,7 @@ CFLAGS = -Wall -Wextra -Werror -std=c99 -g
 # Source files
 SRCS = ft_atoi.c \
        ft_bzero.c \
-       ft_calloc \
+       ft_calloc.c \
        ft_isalnum.c \
        ft_isalpha.c \
        ft_isascii.c \
