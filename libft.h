@@ -6,7 +6,7 @@
 /*   By: conradv2 <conradv2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 02:02:36 by conradv2          #+#    #+#             */
-/*   Updated: 2024/12/15 18:44:00 by conradv2         ###   ########.fr       */
+/*   Updated: 2024/12/16 21:19:20 by conradv2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ void			*ft_memcpy(void*destination, const void*source, size_t num);
 void			*ft_memmove(void*destination, const void*source, size_t num);
 void			*ft_memset(void*str, int c, size_t n);
 char			*ft_strchr(const char *str, int search_str);
+char            *ft_strdup( const char *str1 );
 size_t			ft_strlcat(char *dest, const char *src, size_t size);
 size_t			ft_strlcpy(char *dest, const char *src, size_t size);
 size_t			ft_strlen(const char*str);
