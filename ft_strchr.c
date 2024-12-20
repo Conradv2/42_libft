@@ -6,7 +6,7 @@
 /*   By: kkruszyn <kkruszyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 17:19:27 by kkruszyn          #+#    #+#             */
-/*   Updated: 2024/12/13 19:07:11 by kkruszyn         ###   ########.fr       */
+/*   Updated: 2024/12/20 13:18:03 by kkruszyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,3 @@ char	*ft_strchr(const char *str, int search_str)
 	}
 	return (NULL);
 }
-
