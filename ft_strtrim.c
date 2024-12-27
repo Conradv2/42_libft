@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kkruszyn <kkruszyn@student.42.fr>          +#+  +:+       +#+        */
+/*   By: conradv2 <conradv2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 16:56:36 by kkruszyn          #+#    #+#             */
-/*   Updated: 2024/12/20 18:10:05 by kkruszyn         ###   ########.fr       */
+/*   Updated: 2024/12/27 17:24:39 by conradv2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,39 +14,31 @@
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	char	*_s1;
 	char	*copy;
-	int		counter;
-	size_t	i;
+	int		start;
+	int		end;
+	int		i;
 
-	_s1 = (char *)s1;
 	i = 0;
-	while (i < ft_strlen(_s1))
-	{
-		if (set[i] == _s1[i])
-			counter++;
-		i++;
-	}
-	copy = (char *)malloc((ft_strlen(_s1) - counter + 1) * sizeof(char));
+	start = 0;
+	if (s1 == NULL || set == NULL)
+		return (NULL);
+	end = ft_strlen(s1) - 1;
+	while (start <= end && strchr(set, s1[start]) != NULL)
+		start++;
+	while (end >= start && strchr(set, s1[end]) != NULL)
+		end--;
+	if (start > end)
+		return (ft_strdup(""));
+	copy = (char *)malloc((end - start + 2) * sizeof(char));
 	if (copy == NULL)
 		return (NULL);
-	i = 0;
-	while (i < ft_strlen(_s1) - counter)
+	while (start <= end)
 	{
-		if (set[i] == _s1[i])
-			copy[i] = _s1[i];
+		copy[i] = s1[start];
 		i++;
+		start++;
 	}
+	copy[i] = '\0';
 	return (copy);
-}
-int	main(void)
-{
-	char s1[] = " TEST ";
-	char s2[] = " ";
-
-	printf("%s\n", s1);
-	printf("%s\n", s2);
-	printf("%s\n", ft_strtrim(s1,s2));
-	printf("%s\n", s1);
-	return (0);
 }
