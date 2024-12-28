@@ -6,7 +6,7 @@
 /*   By: conradv2 <conradv2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 16:56:36 by kkruszyn          #+#    #+#             */
-/*   Updated: 2024/12/27 17:24:39 by conradv2         ###   ########.fr       */
+/*   Updated: 2024/12/28 21:16:18 by conradv2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char	*copy;
 	int		start;
 	int		end;
-	int		i;
 
-	i = 0;
 	start = 0;
 	if (s1 == NULL || set == NULL)
 		return (NULL);
@@ -33,12 +31,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	copy = (char *)malloc((end - start + 2) * sizeof(char));
 	if (copy == NULL)
 		return (NULL);
-	while (start <= end)
-	{
-		copy[i] = s1[start];
-		i++;
-		start++;
-	}
-	copy[i] = '\0';
+	ft_memcpy(copy, s1 + start, (end - start + 1));
+	copy[end - start + 1] = '\0';
 	return (copy);
 }
