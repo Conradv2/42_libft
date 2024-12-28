@@ -6,7 +6,7 @@
 /*   By: conradv2 <conradv2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 16:56:36 by kkruszyn          #+#    #+#             */
-/*   Updated: 2024/12/28 21:16:18 by conradv2         ###   ########.fr       */
+/*   Updated: 2024/12/28 23:18:31 by conradv2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 	if (s1 == NULL || set == NULL)
 		return (NULL);
 	end = ft_strlen(s1) - 1;
-	while (start <= end && strchr(set, s1[start]) != NULL)
+	while (start <= end && ft_strchr(set, s1[start]) != NULL)
 		start++;
-	while (end >= start && strchr(set, s1[end]) != NULL)
+	while (end >= start && ft_strchr(set, s1[end]) != NULL)
 		end--;
 	if (start > end)
 		return (ft_strdup(""));
