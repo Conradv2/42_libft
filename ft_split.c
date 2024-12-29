@@ -6,7 +6,7 @@
 /*   By: conradv2 <conradv2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/28 21:22:25 by conradv2          #+#    #+#             */
-/*   Updated: 2024/12/29 18:05:59 by conradv2         ###   ########.fr       */
+/*   Updated: 2024/12/29 18:45:44 by conradv2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,25 +62,21 @@ int	token_arr_fill(char **token_arr, char const *s, char c)
 int	token_counter(char const *s, char c)
 {
 	int	i;
-	int	is_inside;
 	int	token_count;
 
 	i = 0;
-	is_inside = 0;
 	token_count = 0;
 	while (s[i] != '\0')
 	{
-		is_inside = 0;
 		while (s[i] == c && s[i] != '\0')
 			i++;
-		while (s[i] != c && s[i] != '\0')
+		if (s[i] != c && s[i] != '\0')
 		{
-			if (is_inside != 1)
+			token_count++;
+			while (s[i] != c && s[i] != '\0')
 			{
-				token_count++;
-				is_inside = 1;
+				i++;
 			}
-			i++;
 		}
 	}
 	return (token_count);
