@@ -6,7 +6,7 @@
 /*   By: conradv2 <conradv2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 02:02:36 by conradv2          #+#    #+#             */
-/*   Updated: 2024/12/28 21:23:28 by conradv2         ###   ########.fr       */
+/*   Updated: 2025/01/01 13:59:47 by conradv2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int			ft_isalpha(int c);
 int			ft_isascii(int c);
 int			ft_isdigit(int c);
 int			ft_isprint(int c);
+char	    *ft_itoa(int n);
 void		*ft_memchr(const void*ptr, int ch, size_t count);
 int			ft_memcmp(const void*str1, const void*str2, size_t n);
 void		*ft_memcpy(void*destination, const void*source, size_t num);
