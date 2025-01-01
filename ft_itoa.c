@@ -6,11 +6,34 @@
 /*   By: conradv2 <conradv2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/01 13:15:29 by conradv2          #+#    #+#             */
-/*   Updated: 2025/01/01 22:55:54 by conradv2         ###   ########.fr       */
+/*   Updated: 2025/01/01 23:59:25 by conradv2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+char	*handle_special_cases(int _n)
+{
+	char	*_s;
+
+	if (_n == 0)
+	{
+		_s = (char *)malloc((1 + 1) * sizeof(char));
+		if (_s == NULL)
+			return (NULL);
+		_s[0] = '0';
+		_s[1] = '\0';
+		return (_s);
+	}
+	if (_n == -2147483648)
+	{
+		_s = (char *)malloc((11 + 1) * sizeof(char));
+		if (_s == NULL)
+			return (NULL);
+		return (ft_memcpy(_s, "-2147483648", 12));
+	}
+	return (NULL);
+}
 
 char	*s_reverse(char *_s)
 {
@@ -74,22 +97,9 @@ char	*ft_itoa(int n)
 	int		digits_amount;
 
 	is_negative = 0;
-	if (n == 0)
-	{
-		s = (char *)malloc((1 + 1) * sizeof(char));
-		if (s == NULL)
-			return (NULL);
-		s[0] = '0';
-		s[1] = '\0';
+	s = handle_special_cases(n);
+	if (s != NULL)
 		return (s);
-	}
-	if (n == -2147483648)
-	{
-		s = (char *)malloc((11 + 1) * sizeof(char));
-		if (s == NULL)
-			return (NULL);
-		return (memcpy(s, "-2147483648", 12));
-	}
 	if (n < 0)
 		is_negative = 1;
 	digits_amount = digits_count(n);
