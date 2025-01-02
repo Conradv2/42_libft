@@ -6,7 +6,7 @@
 /*   By: conradv2 <conradv2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 02:02:36 by conradv2          #+#    #+#             */
-/*   Updated: 2025/01/02 15:12:34 by conradv2         ###   ########.fr       */
+/*   Updated: 2025/01/02 17:08:19 by conradv2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,10 @@ int			ft_memcmp(const void*str1, const void*str2, size_t n);
 void		*ft_memcpy(void*destination, const void*source, size_t num);
 void		*ft_memmove(void*destination, const void*source, size_t num);
 void		*ft_memset(void*str, int c, size_t n);
+void		ft_putchar_fd(char c, int fd);
+void		ft_putendl_fd(char *s, int fd);
+void		ft_putnbr_fd(int n, int fd);
+void		ft_putstr_fd(char *s, int fd);
 char		**ft_split(char const *s, char c);
 char		*ft_strchr(const char *str, int search_str);
 char		*ft_strdup( const char *str1 );
