@@ -1,5 +1,5 @@
 # Compiler and flags
-CC = gcc
+CC = cc
 CFLAGS = -Wall -Wextra -Werror -std=c99 -g
 
 # Source files
