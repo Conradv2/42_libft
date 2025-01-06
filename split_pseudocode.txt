@@ -1,0 +1,50 @@
+FUNCTION ft_split(s, c)
+    IF s IS NULL
+        RETURN NULL
+
+    // Step 1: Count the tokens
+    SET token_count TO 0
+    SET i TO 0
+    WHILE s[i] IS NOT NULL
+        SKIP any characters equal to c (delimiters)
+        IF s[i] IS NOT NULL
+            INCREMENT token_count
+        WHILE s[i] IS NOT NULL AND s[i] IS NOT c
+            INCREMENT i
+    END WHILE
+
+    // Step 2: Allocate memory for the array of token pointers
+    ALLOCATE memory for tokens array of size (token_count + 1)
+    IF memory allocation fails
+        RETURN NULL
+
+    // Step 3: Extract tokens
+    SET token_index TO 0
+    SET i TO 0
+
+    WHILE s[i] IS NOT NULL
+        SKIP any characters equal to c (delimiters)
+        IF s[i] IS NOT NULL
+            SET token_start TO i
+            WHILE s[i] IS NOT NULL AND s[i] IS NOT c
+                INCREMENT i
+            END WHILE
+            SET token_length TO (i - token_start)
+
+            // Allocate memory for the token and copy the substring
+            ALLOCATE memory for token of size (token_length + 1)
+            IF memory allocation fails
+                FREE all previously allocated tokens
+                FREE tokens array
+                RETURN NULL
+            COPY substring from s[token_start] TO s[token_start + token_length] INTO the new token
+            NULL-TERMINATE the token
+            STORE the new token in tokens[token_index]
+            INCREMENT token_index
+    END WHILE
+
+    // Step 4: Null-terminate the tokens array
+    SET tokens[token_index] TO NULL
+
+    RETURN tokens
+END FUNCTION
