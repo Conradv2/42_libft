@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kkruszyn <kkruszyn@student.42.fr>          +#+  +:+       +#+        */
+/*   By: conradv2 <conradv2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 12:12:14 by kkruszyn          #+#    #+#             */
-/*   Updated: 2024/12/13 16:07:45 by kkruszyn         ###   ########.fr       */
+/*   Updated: 2025/01/06 16:51:05 by conradv2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	*ft_memmove(void*destination, const void*source, size_t num)
 		return (destination);
 	if ((_dest < _source) || (_dest >= _source + num))
 	{
-		_dest = ft_memcpy(_dest, _source, num);
+		ft_memcpy(_dest, _source, num);
 	}
 	else
 	{
