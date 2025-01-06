@@ -6,7 +6,7 @@
 /*   By: conradv2 <conradv2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 12:12:14 by kkruszyn          #+#    #+#             */
-/*   Updated: 2025/01/06 16:51:05 by conradv2         ###   ########.fr       */
+/*   Updated: 2025/01/06 21:11:37 by conradv2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	*ft_memmove(void*destination, const void*source, size_t num)
 	unsigned char	*_dest;
 	unsigned char	*_source;
 
+	if (destination == NULL || source == NULL)
+		return (NULL);
 	_dest = (unsigned char *)destination;
 	_source = (unsigned char *)source;
 	if ((_dest == _source) || num == 0)
