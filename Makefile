@@ -48,18 +48,27 @@ NAME = libft.a
 all: $(NAME)
 
 # Rule for building the static library
+# ar <- utility to create or modify an archive (static library for example)
+# r <- replace contents of the archive, if object file exists it is replaced, if it doesnt exist it is created
+# c <- creates archive if it doesnt exist, if it does its not overwrote, ar will create or update the archive with new files
+# s <- creates index for the archive, faster lookup of symbols inside the archive 
 $(NAME): $(OBJS)
 		ar rcs $(NAME) $(OBJS)
 
 # Rule for compiling the source files to object files
+# -c <- only compile the source file into object file without linking to executable
+# $< <- automatic variable, first prerequisite of the rule, it will be replaced with .c that is being compiled
+# -o <- name of output file
+# $@ <- automatic variable, refers to the target of the rule, so $@ becomes .o corresponding to the .c that is being compiled
 %.o: %.c libft.h
 	$(CC) $(CFLAGS) -c $< -o $@
 
 # Clean the object files
+# f <- force removing files without confirmation
 clean:
 		rm -f $(OBJS)
 
-# Clean everything (object files + the static library)
+# Clean object files and static library
 fclean: clean
 		rm -f $(NAME)
 
