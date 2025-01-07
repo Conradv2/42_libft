@@ -6,7 +6,7 @@
 /*   By: kkruszyn <kkruszyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 14:27:45 by kkruszyn          #+#    #+#             */
-/*   Updated: 2025/01/07 11:11:46 by kkruszyn         ###   ########.fr       */
+/*   Updated: 2025/01/07 12:13:29 by kkruszyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 	size_t	space_left;
 	size_t	i;
 
-	if ((dest == NULL || src == NULL) && size == 0)
-		return (0);
-	dest_len = ft_strlen(dest);
 	src_len = ft_strlen(src);
+	if (size == 0)
+		return (src_len);
+	dest_len = ft_strlen(dest);
 	space_left = size - dest_len - 1;
 	i = 0;
 	if (size <= dest_len)
