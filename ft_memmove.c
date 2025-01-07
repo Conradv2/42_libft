@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: conradv2 <conradv2@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kkruszyn <kkruszyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 12:12:14 by kkruszyn          #+#    #+#             */
-/*   Updated: 2025/01/06 21:11:37 by conradv2         ###   ########.fr       */
+/*   Updated: 2025/01/07 10:22:54 by kkruszyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	*ft_memmove(void*destination, const void*source, size_t num)
 	unsigned char	*_dest;
 	unsigned char	*_source;
 
-	if (destination == NULL || source == NULL)
+	if (destination == NULL && source == NULL)
 		return (NULL);
 	_dest = (unsigned char *)destination;
 	_source = (unsigned char *)source;
